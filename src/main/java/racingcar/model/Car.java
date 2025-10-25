@@ -1,6 +1,6 @@
 package racingcar.model;
 
-public class Car {
+public class Car implements Comparable<Car> {
     private final String name;
     private int moveDistance;
     public Car(String name, int moveDistance) {
@@ -10,13 +10,19 @@ public class Car {
     public void move() {
         moveDistance++;
     }
-    public boolean isFinished(int lap) {
-        if (moveDistance >= lap) {
+    @Override
+    public int compareTo(Car car) {
+        return this.moveDistance - car.moveDistance;
+    }
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
             return true;
         }
-        return false;
-    }
-    public int getMoveDistance() {
-        return moveDistance;
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+
+        return this.moveDistance == ((Car) obj).moveDistance;
     }
 }
