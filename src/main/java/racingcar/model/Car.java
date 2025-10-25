@@ -16,4 +16,7 @@ public class Car {
         }
         return false;
     }
+    public int getMoveDistance() {
+        return moveDistance;
+    }
 }
