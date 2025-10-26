@@ -9,7 +9,7 @@ public class LapValidatorTest {
     @DisplayName("시도할 횟수로 올바른 형태")
     void properNumberInput() {
         LapValidator validator = new LapValidator();
-        Assertions.assertThat(validator.validate("12")).isTrue();
+        Assertions.assertThat(validator.validate("12")).isEqualTo(12);
     }
 
     @Test
