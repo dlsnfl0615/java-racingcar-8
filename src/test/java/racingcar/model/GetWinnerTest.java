@@ -12,7 +12,7 @@ public class GetWinnerTest {
     void finishedCars() {
         List<Car> cars = List.of(new Car("car1", 5), new Car("car2", 3), new Car("car3", 5));
         GetWinner winner = new GetWinner();
-        List<Car> winners = winner.winner(cars, 5);
+        List<Car> winners = winner.winner(cars);
         Assertions.assertThat(winners).containsExactly(cars.get(0), cars.get(2));
     }
 }
