@@ -15,4 +15,12 @@ public class GetWinner {
         }
         return winnerCars;
     }
+    public String winnerListToString(List<Car> winners) {
+        String result = "최종 우승자 : ";
+        for (Car car : winners) {
+            result += car.getWinner() + ", ";
+        }
+        result = result.substring(0, result.length() - 2);
+        return result;
+    }
 }
