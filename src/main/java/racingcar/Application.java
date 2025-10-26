@@ -12,6 +12,6 @@ public class Application {
         RaceManager raceManager = new RaceManager();
 
         RacingController racingController = new RacingController(inputView, outputView, raceManager);
-        racingController.run();
+        racingController.startRace();
     }
 }
