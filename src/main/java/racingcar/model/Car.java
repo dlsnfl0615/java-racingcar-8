@@ -25,4 +25,12 @@ public class Car implements Comparable<Car> {
 
         return this.moveDistance == ((Car) obj).moveDistance;
     }
+    public String getDistanceString() {
+        String result = "";
+        result = name + " : ";
+        for (int i = 0; i < moveDistance; i++) {
+            result += "-";
+        }
+        return result;
+    }
 }
