@@ -15,7 +15,7 @@ public class RacingController {
         this.raceManager = raceManager;
     }
 
-    public void run() {
+    public void startRace() {
         String carNames = inputView.inputNameLap();
         String lap = inputView.inputNameLap();
 
