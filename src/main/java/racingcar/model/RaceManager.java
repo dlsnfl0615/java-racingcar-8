@@ -11,35 +11,35 @@ public class RaceManager {
     private final CarNameParser carNameParser = new CarNameParser();
     private final LapValidator lapValidator = new LapValidator();
 
-    public void initNameLap(String carNames, String lap) {
+    public void initNameLap(String carNames, int lap) {
         List<String> seperatedNames = carNameParser.parse(carNames);
-        for (int i = 0; i < seperatedNames.size(); i++) {
-            cars.add(new Car(seperatedNames.get(i), 0));
+        for (String name : seperatedNames) {
+            cars.add(new Car(name, 0));
         }
 
-        this.lap = lapValidator.validate(lap);
+        this.lap = lap;
     }
 
-    public String manage() {
-        for (int i = 0; i < lap; i++) {
-            moveCar();
-            printDistancePerLap();
-        }
-
+    public String getWinner() {
         List<Car> winners = getWinner.winner(cars);
         return getWinner.winnerListToString(winners);
     }
 
     public void moveCar() {
-        for (int i = 0; i < cars.size(); i++) {
-            moveForward.move(cars.get(i));
+        for (Car car : cars) {
+            moveForward.move(car);
         }
     }
 
-    public void printDistancePerLap() {
+    public List<String> getDistancesPerLap() {
+        List<String> distances = new ArrayList<>();
         for (Car car : cars) {
-            System.out.println(car.getDistance());
+            distances.add(car.getDistance());
         }
-        System.out.println("==================");
+        return distances;
+    }
+
+    public int validateLap(String inputLap) {
+        return lapValidator.validate(inputLap);
     }
 }
