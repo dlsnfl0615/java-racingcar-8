@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class CarNameParser {
-    public static List<String> parse(String input) {
+    public List<String> parse(String input) {
         String[] names = input.split(",");
 
         return Arrays.stream(names)
