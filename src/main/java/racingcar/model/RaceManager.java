@@ -4,20 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RaceManager {
-    private int lap;
-    private final List<Car> cars = new ArrayList<>();
-    private final MoveForward moveForward = new MoveForward();
-    private final GetWinner getWinner = new GetWinner();
-    private final CarNameParser carNameParser = new CarNameParser();
-    private final LapValidator lapValidator = new LapValidator();
+    private final int lap;
+    private final List<Car> cars;
+    private final MoveForward moveForward;
+    private final GetWinner getWinner;
 
-    public void initNameLap(String carNames, int lap) {
-        List<String> seperatedNames = carNameParser.parse(carNames);
-        for (String name : seperatedNames) {
-            cars.add(new Car(name, 0));
-        }
-
-        this.lap = lap;
+    public RaceManager(List<Car> cars, int totalLapCount) {
+        this.cars = cars;
+        this.lap = totalLapCount;
+        this.moveForward = new MoveForward();
+        this.getWinner = new GetWinner();
     }
 
     public String getWinner() {
@@ -39,7 +35,7 @@ public class RaceManager {
         return distances;
     }
 
-    public int validateLap(String inputLap) {
-        return lapValidator.validate(inputLap);
+    public int getLap() {
+        return lap;
     }
 }
