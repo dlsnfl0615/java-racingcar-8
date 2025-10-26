@@ -5,7 +5,7 @@ import java.util.List;
 
 public class RaceManager {
     private int lap;
-    private List<Car> cars = new ArrayList<>();
+    private final List<Car> cars = new ArrayList<>();
     private final MoveForward moveForward = new MoveForward();
     private final GetWinner getWinner = new GetWinner();
     private final CarNameParser carNameParser = new CarNameParser();
