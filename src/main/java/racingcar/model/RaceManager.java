@@ -38,7 +38,7 @@ public class RaceManager {
 
     public void printDistancePerLap() {
         for (Car car : cars) {
-            car.getDistance();
+            System.out.println(car.getDistance());
         }
         System.out.println("==================");
     }
