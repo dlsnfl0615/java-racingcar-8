@@ -1,7 +1,7 @@
 package racingcar.model;
 
 public class CarNameValidator {
-    public static boolean validator(String carName) {
+    public static boolean isValid(String carName) {
         if (carName.length() > 5) {
             throw new IllegalArgumentException("자동차의 이름은 5글자 이하여야 합니다.");
         }
