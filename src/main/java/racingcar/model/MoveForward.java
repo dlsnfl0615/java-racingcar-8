@@ -2,7 +2,7 @@ package racingcar.model;
 
 public class MoveForward {
     public void move(Car car) {
-        if (GetRandomNumber.random()) {
+        if (RandomNumberGenerator.random()) {
             car.move();
         }
     }
