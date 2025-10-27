@@ -2,11 +2,24 @@ package racingcar.view;
 
 import racingcar.model.Car;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class OutputView {
-    public void printRaceProgress(List<String> distanceStrings) {
-        for (String distance : distanceStrings) {
+    public List<String> formatProgress(List<Car> cars) {
+        List<String> progress = new ArrayList<>();
+        for (Car car : cars) {
+            String result = car.getName() + " : ";
+            result += "-".repeat(car.getDistance());
+            progress.add(result);
+        }
+
+        return progress;
+    }
+
+    public void printRaceProgress(List<Car> cars) {
+        List<String> progress = formatProgress(cars);
+        for (String distance : progress) {
             System.out.println(distance);
         }
         System.out.println("==================");
@@ -15,7 +28,7 @@ public class OutputView {
     public String formatWinners(List<Car> winners) {
         String result = "최종 우승자 : ";
         for (Car car : winners) {
-            result += car.getWinner() + ", ";
+            result += car.getName() + ", ";
         }
         result = result.substring(0, result.length() - 2);
 
