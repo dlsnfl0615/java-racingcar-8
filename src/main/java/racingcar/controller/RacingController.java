@@ -28,7 +28,7 @@ public class RacingController {
         // 시도 횟수(랩)마다 경기 진행 상황 출력
         for (int i = 0; i < raceManager.getLap(); i++) {
             raceManager.moveCar();
-            List<String> raceProgress = raceManager.getDistancesPerLap();
+            List<Car> raceProgress = raceManager.getCars();
             outputView.printRaceProgress(raceProgress);
         }
 
