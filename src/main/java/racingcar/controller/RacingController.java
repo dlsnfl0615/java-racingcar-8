@@ -1,5 +1,6 @@
 package racingcar.controller;
 
+import racingcar.model.Car;
 import racingcar.model.RaceManager;
 import racingcar.model.RaceService;
 import racingcar.view.InputView;
@@ -24,13 +25,14 @@ public class RacingController {
 
         RaceManager raceManager = raceService.createRace(carNames, inputLap);
 
+        // 시도 횟수(랩)마다 경기 진행 상황 출력
         for (int i = 0; i < raceManager.getLap(); i++) {
             raceManager.moveCar();
             List<String> raceProgress = raceManager.getDistancesPerLap();
             outputView.printRaceProgress(raceProgress);
         }
 
-        String winners = raceManager.getWinner();
-        outputView.printResult(winners);
+        List<Car> winners = raceManager.getWinner();
+        outputView.printWinners(winners);
     }
 }
