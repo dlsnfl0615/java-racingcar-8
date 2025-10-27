@@ -16,9 +16,8 @@ public class RaceManager {
         this.getWinner = new GetWinner();
     }
 
-    public String getWinner() {
-        List<Car> winners = getWinner.winner(cars);
-        return getWinner.winnerListToString(winners);
+    public List<Car> getWinner() {
+        return getWinner.winner(cars);
     }
 
     public void moveCar() {
