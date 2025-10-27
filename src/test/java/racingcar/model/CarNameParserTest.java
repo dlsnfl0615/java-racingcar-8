@@ -36,4 +36,13 @@ public class CarNameParserTest {
             carNameParser.parse("최진우, ")
         );
     }
+
+    @Test
+    @DisplayName("자동차 이름 중복")
+    void duplicateCarName() {
+        CarNameParser carNameParser = new CarNameParser();
+        assertThrows(IllegalArgumentException.class, () ->
+                carNameParser.parse("최진우,최진우")
+        );
+    }
 }
