@@ -1,6 +1,5 @@
 package racingcar.model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class RaceManager {
@@ -26,12 +25,8 @@ public class RaceManager {
         }
     }
 
-    public List<String> getDistancesPerLap() {
-        List<String> distances = new ArrayList<>();
-        for (Car car : cars) {
-            distances.add(car.getDistance());
-        }
-        return distances;
+    public List<Car> getCars() {
+        return cars;
     }
 
     public int getLap() {
