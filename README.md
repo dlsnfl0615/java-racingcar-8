@@ -28,13 +28,14 @@
 | 클래스명 | 역할 |
 |-----------|------|
 | `Car` | 이름과 이동거리 저장 |
-| `GetRandomNumber` | 0~9 사이의 난수를 생성 |
+| `RandomNumberGenerator` | 0~9 사이의 난수를 생성 |
 | `MoveForward` | 난수(4 이상) 여부에 따라 자동차 전진 여부 결정 |
 | `CarNameValidator` | 자동차 이름의 유효성 검사 (빈 문자열, 길이 등) |
 | `CarNameParser` | 입력받은 자동차 이름 문자열을 쉼표로 분리 |
 | `LapValidator` | 시도 횟수(n)의 유효성 검사 |
 | `GetWinner` | 우승자 판별 |
 | `RaceManager` | 경주 객체 관리 |
+| `RaceService` | 초기화 및 검증 관리 |
 
 ---
 
