@@ -3,6 +3,7 @@ package racingcar.model;
 import java.util.ArrayList;
 import java.util.List;
 
+// 초기화 및 검증 책임을 전담하여 Race 객체를 생성하고 반환
 public class RaceService {
     private final CarNameParser carNameParser;
     private final LapValidator lapValidator;
@@ -12,7 +13,6 @@ public class RaceService {
         this.lapValidator = lapValidator;
     }
 
-    // 초기화 및 검증 책임을 전담하여 Race 객체를 생성하고 반환
     public RaceManager createRace(String carNamesInput, String lapInput) {
         List<String> separatedNames = carNameParser.parse(carNamesInput);
 

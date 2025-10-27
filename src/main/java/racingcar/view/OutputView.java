@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OutputView {
+    // 이동거리를 "-"로 시각화
     public List<String> formatProgress(List<Car> cars) {
         List<String> progress = new ArrayList<>();
         for (Car car : cars) {

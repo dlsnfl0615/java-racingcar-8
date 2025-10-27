@@ -2,6 +2,7 @@ package racingcar.model;
 
 import java.util.List;
 
+// 경주 진행 담당
 public class RaceManager {
     private final int lap;
     private final List<Car> cars;
