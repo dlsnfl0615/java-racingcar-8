@@ -30,18 +30,9 @@ public class Car implements Comparable<Car> {
         return this.moveDistance == ((Car) obj).moveDistance;
     }
 
-    // 이동 칸 수(숫자)를 문자열로 시각화하기
-    public String getDistance() {
-        String result = "";
-        result = name + " : ";
-        for (int i = 0; i < moveDistance; i++) {
-            result += "-";
-        }
+    public int getDistance() { return moveDistance; }
 
-        return result;
-    }
-
-    public String getWinner() {
+    public String getName() {
         return name;
     }
 }
