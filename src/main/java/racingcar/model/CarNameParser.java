@@ -9,7 +9,7 @@ public class CarNameParser {
         String[] names = input.split(",");
 
         return Arrays.stream(names)
-                .peek(CarNameValidator::isValid)
+                .peek(CarNameValidator::isValid) // 이름 입력 양식 검증
                 .collect(Collectors.toList());
     }
 }
