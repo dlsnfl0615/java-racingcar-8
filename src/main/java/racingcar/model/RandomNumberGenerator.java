@@ -5,9 +5,6 @@ import camp.nextstep.edu.missionutils.Randoms;
 public class RandomNumberGenerator {
     public static boolean random() {
         int randomNumber = Randoms.pickNumberInRange(0, 9);
-        if (randomNumber >= 4) {
-            return true;
-        }
-        return false;
+        return randomNumber >= 4;
     }
 }
