@@ -15,6 +15,7 @@ public class GetWinner {
         }
         return winnerCars;
     }
+
     public String winnerListToString(List<Car> winners) {
         String result = "최종 우승자 : ";
         for (Car car : winners) {
