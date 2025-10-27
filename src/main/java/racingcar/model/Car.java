@@ -3,17 +3,21 @@ package racingcar.model;
 public class Car implements Comparable<Car> {
     private final String name;
     private int moveDistance;
+
     public Car(String name, int moveDistance) {
         this.name = name;
         this.moveDistance = moveDistance;
     }
+
     public void move() {
         moveDistance++;
     }
+
     @Override
     public int compareTo(Car car) {
         return this.moveDistance - car.moveDistance;
     }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -25,6 +29,7 @@ public class Car implements Comparable<Car> {
 
         return this.moveDistance == ((Car) obj).moveDistance;
     }
+
     public String getDistance() {
         String result = "";
         result = name + " : ";
@@ -34,6 +39,7 @@ public class Car implements Comparable<Car> {
 
         return result;
     }
+
     public String getWinner() {
         return name;
     }
